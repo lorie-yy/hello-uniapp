@@ -1,0 +1,1 @@
+<view class="echarts-wrap _div" bind:__l="__l"><mpvue-echarts echarts="{{echarts}}" onInit="{{onInit}}" canvasId="demo-canvas"></mpvue-echarts></view>

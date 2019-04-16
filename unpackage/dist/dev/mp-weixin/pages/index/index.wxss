@@ -1,0 +1,17 @@
+.content {
+  text-align: center;
+  height: 400rpx;
+}
+.content .a-style {
+  color: red;
+}
+.logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 200rpx;
+}
+.title {
+  font-size: 36rpx;
+  color: #8f8f94;
+}
+
