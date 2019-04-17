@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import mpvueEcharts from '../..//components/common/reportEchart.vue'
+import mpvueEcharts from '@/pages/report/demo.vue'
 export default {
 	data() {
 		let title = "这里是report啊";

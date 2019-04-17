@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "lorie-report",
-  "usingComponents": {
-    "mpvue-echarts": "/components/common/reportEchart"
-  }
-}

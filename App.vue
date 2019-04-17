@@ -13,6 +13,13 @@
 </script>
 
 <style lang='less'>
+	/* 以下样式用于 hello uni-app 演示所需 */
+	page {
+		background-color: #F4F5F6;
+		height: 100%;
+		font-size: 28upx;
+		line-height: 1.8;
+	}
 	/*每个页面公共css */
 	uni-page-wrapper{
 		height: 100%;

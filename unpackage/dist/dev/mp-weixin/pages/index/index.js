@@ -140,7 +140,7 @@ var _default =
     goTo: function goTo() {
       console.log("出发了方法goTo");
       uni.navigateTo({
-        url: '../report/report',
+        url: '../report/demo',
         animationType: 'pop-in',
         animationDuration: 200 });
 

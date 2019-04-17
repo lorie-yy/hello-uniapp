@@ -102,11 +102,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/common/reportEchart":1,"mpvue-echarts/src/echarts":1};
+/******/ 		var cssChunks = {"components/mpvue-echarts/src/echarts":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/common/reportEchart":"components/common/reportEchart","mpvue-echarts/src/echarts":"mpvue-echarts/src/echarts"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/mpvue-echarts/src/echarts":"components/mpvue-echarts/src/echarts"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
