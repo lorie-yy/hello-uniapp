@@ -1,1 +1,1 @@
-<view class="container" bind:__l="__l"><view class="canvasView"><view class="title">雷达图示例</view><mpvue-echarts class="ec-canvas vue-ref" canvasId="line" data-ref="lineChart" data-event-opts="{{[['^onInit',[['lineInit']]]]}}" bind:onInit="__e"></mpvue-echarts></view></view>
+<view class="container" bind:__l="__l"><view class="canvasView"><mpvue-echarts class="ec-canvas vue-ref" canvasId="line" data-ref="lineChart" data-event-opts="{{[['^onInit',[['lineInit']]]]}}" bind:onInit="__e"></mpvue-echarts></view></view>
