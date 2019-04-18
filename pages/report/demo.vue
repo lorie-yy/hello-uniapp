@@ -1,5 +1,11 @@
 <template>
 	<view class="container">
+		<view>
+			<image mode="aspectFit" :src="tempFilePaths" @click="chooseImage" class="choose-image" ></image>
+		</view>
+		<view class="choose-image-span">
+			<span>秀出我的宝宝</span>
+		</view>
 		<view class="canvasView">
 			<!-- <view class="title">雷达图示例</view> -->
 			<mpvue-echarts class="ec-canvas" @onInit="lineInit" canvasId="line" ref="lineChart" />
@@ -177,13 +183,48 @@
 
 	export default {
 		data() {
+			let title = "这里是report啊";
 			return {
+				title,
+				tempFilePaths: "../../static/logo.png",
 				updateStatus: false
-			}
+			};
 		},
 		onLoad() {
 		},
 		methods: {
+			// 上传头像
+			chooseImage() {
+				uni.chooseImage({
+					count: 1, //默认9
+					sizeType: ['compressed'], //original 原图，compressed 压缩图，默认二者都有
+					sourceType: ['album', 'camera'], //album 从相册选图，camera 使用相机，默认二者都有
+					success: (res) => {
+						console.log('res', res)
+						console.log('图片临时路径', JSON.stringify(res.tempFilePaths))
+						console.log('图片大小（M）', res.tempFiles[0].size / (1024*1024))
+						if(res.tempFiles[0].size > 1024*1024*2){
+							console.log('请上传小于2M的图片')
+							uni.showToast({
+								icon: 'none',
+								title: '请上传小于5M的图片'
+							});
+							return
+						}
+						this.tempFilePaths = res.tempFilePaths
+						this.showEchart=true
+						// 保存文件到本地
+						// let tempFilePaths = res.tempFilePaths;
+						// uni.saveFile({
+						//   tempFilePath: tempFilePaths[0],
+						//   success: function (res) {
+						//     let savedFilePath = res.savedFilePath;
+						//   }
+						// });
+					}
+				})
+			},
+			// 初始化雷达图
 			lineInit(e) {
 				let {width, height} = e ;
 				let canvas = this.$refs.lineChart.canvas 
@@ -203,7 +244,25 @@
 	}
 </script>
 
-<style>
+<style lang="less">
+	.title {
+		font-size: 36upx;
+		color: #8f8f94;
+	}
+	.choose-image{
+		background-size: 100px;
+		width: 100px; 
+		height: 100px;
+		margin: 0 auto;
+		border: 1px solid #eee;
+		border-radius: 50%;
+	}
+	.choose-image-span{
+		margin: 8px auto;
+		span {
+			font-size: 12px;
+		}
+	}
 	page,
 	view {
 		display: flex;

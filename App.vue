@@ -27,8 +27,4 @@
 		margin: 0;
 		padding: 0;
 	}
-	.content {
-		text-align: center;
-		padding: 0 10px;
-	}
 </style>
